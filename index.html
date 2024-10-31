@@ -3,48 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reyes Counseling</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        header {
-            text-align: center;
-            padding: 20px 0;
-        }
-        .contact-info {
-            margin-top: 30px;
-            text-align: center;
-        }
-    </style>
+    <title>Wellness Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Reyes Counseling</h1>
-    </header>
-    
-    <main>
-        <p>We are committed to providing professional counseling services to help you on your journey to wellness.</p>
+    <div class="container">
+        <h1>Wellness Tracker</h1>
         
-        <h2>Our Services</h2>
-        <ul>
-            <li>Individual Counseling</li>
-            <li>Family Therapy</li>
-            <li>Group Sessions</li>
-            <li>Mental Health Support</li>
-        </ul>
-    </main>
-    
-    <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p>Schedule your appointment today</p>
-        <!-- Add your contact information here -->
-        <p>Email: [Your Email]</p>
-        <p>Phone: [Your Phone]</p>
+        <div class="thermometers">
+            <!-- Thermometer 1 -->
+            <div class="thermometer-container">
+                <label for="emotion1">Happiness</label>
+                <div class="thermometer" id="thermo1">
+                    <div class="fill"></div>
+                    <div class="scale"></div>
+                    <div class="value">0</div>
+                </div>
+            </div>
+
+            <!-- Thermometer 2 -->
+            <div class="thermometer-container">
+                <label for="emotion2">Energy</label>
+                <div class="thermometer" id="thermo2">
+                    <div class="fill"></div>
+                    <div class="scale"></div>
+                    <div class="value">0</div>
+                </div>
+            </div>
+
+            <!-- Thermometer 3 -->
+            <div class="thermometer-container">
+                <label for="emotion3">Calmness</label>
+                <div class="thermometer" id="thermo3">
+                    <div class="fill"></div>
+                    <div class="scale"></div>
+                    <div class="value">0</div>
+                </div>
+            </div>
+
+            <!-- Thermometer 4 -->
+            <div class="thermometer-container">
+                <label for="emotion4">Focus</label>
+                <div class="thermometer" id="thermo4">
+                    <div class="fill"></div>
+                    <div class="scale"></div>
+                    <div class="value">0</div>
+                </div>
+            </div>
+
+            <!-- Thermometer 5 -->
+            <div class="thermometer-container">
+                <label for="emotion5">Confidence</label>
+                <div class="thermometer" id="thermo5">
+                    <div class="fill"></div>
+                    <div class="scale"></div>
+                    <div class="value">0</div>
+                </div>
+            </div>
+
+            <!-- Thermometer 6 -->
+            <div class="thermometer-container">
+                <label for="emotion6">Motivation</label>
+                <div class="thermometer" id="thermo6">
+                    <div class="fill"></div>
+                    <div class="scale"></div>
+                    <div class="value">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="emotions.html" class="emotions-link">Explore Emotions</a>
+            <a href="bodyfeelings.html" class="bodyfeelings-link">Track Body Feelings</a>
+            <a href="emotionswheel.html" class="emotions-link">Emotions Wheel</a>
+            <a href="thoughtreframe.html" class="cognitive-reframing-link">Cognitive Reframing</a>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
