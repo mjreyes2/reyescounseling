@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Play Therapy Room</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        .therapy-container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        .toolbar {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .play-area {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sand-area {
+            background: #f4d03f;
+            height: 300px;
+            margin: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .item-category {
+            margin-bottom: 15px;
+        }
+
+        .item-category h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .item {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border-radius: 5px;
+            cursor: grab;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .control-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #45a049;
+        }
+
+        .btn.clear {
+            background: #f44336;
+        }
+
+        .btn.clear:hover {
+            background: #da190b;
+        }
+
+        /* Placeholder for draggable items */
+        .draggable {
+            position: absolute;
+            cursor: move;
+            user-select: none;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="therapy-container">
+        <div class="toolbar">
+            <div class="item-category">
+                <h3>People</h3>
+                <div class="items-grid">
+                    <div class="item" draggable="true">Family</div>
+                    <div class="item" draggable="true">Child</div>
+                    <div class="item" draggable="true">Parent</div>
+                    <div class="item" draggable="true">Helper</div>
+                </div>
+            </div>
+
+            <div class="item-category">
+                <h3>Buildings</h3>
+                <div class="items-grid">
+                    <div class="item" draggable="true">House</div>
+                    <div class="item" draggable="true">School</div>
+                    <div class="item" draggable="true">Hospital</div>
+                    <div class="item" draggable="true">Park</div>
+                </div>
+            </div>
+
+            <div class="item-category">
+                <h3>Nature</h3>
+                <div class="items-grid">
+                    <div class="item" draggable="true">Tree</div>
+                    <div class="item" draggable="true">Flower</div>
+                    <div class="item" draggable="true">Rock</div>
+                    <div class="item" draggable="true">Water</div>
+                </div>
+            </div>
+
+            <div class="item-category">
+                <h3>Feelings</h3>
+                <div class="items-grid">
+                    <div class="item" draggable="true">Happy</div>
+                    <div class="item" draggable="true">Sad</div>
+                    <div class="item" draggable="true">Angry</div>
+                    <div class="item" draggable="true">Scared</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="play-area">
+            <div class="sand-area" id="sandArea"></div>
+        </div>
+    </div>
+
+    <div class="control-panel">
+        <button class="btn save">Save Scene</button>
+        <button class="btn clear">Clear All</button>
+    </div>
+
+    <script>
+        // Initialize drag and drop functionality
+        let draggedItem = null;
+        let offset = { x: 0, y: 0 };
+
+        // Make items draggable
+        document.querySelectorAll('.item').forEach(item => {
+            item.addEventListener('dragstart', handleDragStart);
+            item.addEventListener('dragend', handleDragEnd);
+        });
+
+        // Setup drop zone
+        const sandArea = document.getElementById('sandArea');
+        sandArea.addEventListener('dragover', handleDragOver);
+        sandArea.addEventListener('drop', handleDrop);
+
+        function handleDragStart(e) {
+            draggedItem = this;
+            e.dataTransfer.setData('text/plain', '');
+        }
+
+        function handleDragEnd() {
+            draggedItem = null;
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            if (draggedItem) {
+                const newItem = document.createElement('div');
+                newItem.className = 'draggable';
+                newItem.textContent = draggedItem.textContent;
+                
+                // Position the item where it was dropped
+                const rect = sandArea.getBoundingClientRect();
+                newItem.style.left = (e.clientX - rect.left - 25) + 'px';
+                newItem.style.top = (e.clientY - rect.top - 25) + 'px';
+                
+                sandArea.appendChild(newItem);
+                
+                // Make the dropped item draggable
+                makeDraggable(newItem);
+            }
+        }
+
+        function makeDraggable(element) {
+            element.addEventListener('mousedown', function(e) {
+                const rect = element.getBoundingClientRect();
+                offset.x = e.clientX - rect.left;
+                offset.y = e.clientY - rect.top;
+                
+                function moveElement(e) {
+                    const parentRect = sandArea.getBoundingClientRect();
+                    element.style.left = (e.clientX - parentRect.left - offset.x) + 'px';
+                    element.style.top = (e.clientY - parentRect.top - offset.y) + 'px';
+                }
+                
+                function removeListeners() {
+                    document.removeEventListener('mousemove', moveElement);
+                    document.removeEventListener('mouseup', removeListeners);
+                }
+                
+                document.addEventListener('mousemove', moveElement);
+                document.addEventListener('mouseup', removeListeners);
+            });
+        }
+
+        // Clear button functionality
+        document.querySelector('.btn.clear').addEventListener('click', () => {
+            while (sandArea.firstChild) {
+                sandArea.removeChild(sandArea.firstChild);
+            }
+        });
+
+        // Save button functionality (placeholder)
+        document.querySelector('.btn.save').addEventListener('click', () => {
+            alert('Scene saved!');
+            // Here you would implement actual save functionality
+        });
+    </script>
+</body>
+</html>

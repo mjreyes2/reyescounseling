@@ -3,81 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Thermometers</title>
-    <link rel="stylesheet" href="styles.css?v=1.0.3">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <title>Marvin Polanco - Professional Site Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .construction-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .caution-stripe {
+            height: 30px;
+            background: repeating-linear-gradient(
+                45deg,
+                #FFD700,
+                #FFD700 20px,
+                #000000 20px,
+                #000000 40px
+            );
+        }
+
+        .hard-hat {
+            width: 120px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            color: #333;
+            margin: 20px 0;
+            font-size: 2.5em;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .contact-info {
+            margin: 30px 0;
+            text-align: left;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .tool-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4A6741;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .tool-button:hover {
+            background-color: #3a5233;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        svg.hat-icon {
+            width: 80px;
+            height: 80px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Emotion Thermometers</h1>
-        <div class="thermometers">
-            <div class="thermometer-container">
-                <input type="text" class="emotion-input" placeholder="Emotion">
-                <div class="thermometer" id="thermo1">
-                    <div class="fill"></div>
-                    <div class="scale"></div>
-                    <span class="value">0</span>
-                </div>
-            </div>
-            <div class="thermometer-container">
-                <input type="text" class="emotion-input" placeholder="Emotion">
-                <div class="thermometer" id="thermo2">
-                    <div class="fill"></div>
-                    <div class="scale"></div>
-                    <span class="value">0</span>
-                </div>
-            </div>
-            <div class="thermometer-container">
-                <input type="text" class="emotion-input" placeholder="Emotion">
-                <div class="thermometer" id="thermo3">
-                    <div class="fill"></div>
-                    <div class="scale"></div>
-                    <span class="value">0</span>
-                </div>
-            </div>
-            <div class="thermometer-container">
-                <input type="text" class="emotion-input" placeholder="Emotion">
-                <div class="thermometer" id="thermo4">
-                    <div class="fill"></div>
-                    <div class="scale"></div>
-                    <span class="value">0</span>
-                </div>
-            </div>
-            <div class="thermometer-container">
-                <input type="text" class="emotion-input" placeholder="Emotion">
-                <div class="thermometer" id="thermo5">
-                    <div class="fill"></div>
-                    <div class="scale"></div>
-                    <span class="value">0</span>
-                </div>
-            </div>
-            <div class="thermometer-container">
-                <input type="text" class="emotion-input" placeholder="Emotion">
-                <div class="thermometer" id="thermo6">
-                    <div class="fill"></div>
-                    <div class="scale"></div>
-                    <span class="value">0</span>
-                </div>
-            </div>
+    <div class="construction-container">
+        <div class="caution-stripe"></div>
+        
+        <!-- SVG Hard Hat - More reliable than CSS shape -->
+        <svg class="hat-icon" viewBox="0 0 100 100">
+            <path d="M10 50 A40 40 0 0 1 90 50 L85 70 A35 35 0 0 1 15 70 Z" fill="#FFD700"/>
+            <path d="M5 45 H95" stroke="#FFD700" stroke-width="8"/>
+        </svg>
+
+        <h1>Personal Website Under Construction</h1>
+        <p>Welcome to my professional space! My personal website extension is currently under development.</p>
+        
+        <a href="emotionthermometers.html" class="tool-button">
+            Access Emotion Thermometers Tool
+            <br>
+            <small>(Free Resource for Virtual Therapy)</small>
+        </a>
+
+        <div class="contact-info">
+            <p><strong>Professional Contact:</strong></p>
+            <p>📧 marvin@tampabaytherapist.com</p>
+            <p>📞 (813) 603-6242</p>
+            <p>📍 8910 N Dale Mabry Hwy, Suite 2, Tampa, FL 33614</p>
         </div>
+        
+        <div class="caution-stripe"></div>
     </div>
-    <div>
-        <a href="emotions.html" class="emotions-link">Go to Emotions Page</a>
-    </div>
-    <div>
-        <a href="emotionswheel.html" class="emotions-link">Go to Emotions Table Page</a>
-    </div>
-    <div>
-        <a href="bodyfeelings.html" class="bodyfeelings-link">Go to Emotion Body Map Page</a>
-    </div>
-    <div>
-        <a href="thoughtreframe.html" class="cognitive-reframing-link" target="_blank">Go to Cognitive Reframing</a>
-    </div>
-    <div>
-        <a href="angermanagement.html" class="anger-management"> Go to Anger Management</a>
-    </div>
-    <script src="script.js?v=1.0.3"></script>
 </body>
 </html>
