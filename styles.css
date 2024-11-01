@@ -108,7 +108,8 @@ h1 {
 .emotions-link,
 .bodyfeelings-link,
 .thoughtreframe-link,
-.cognitive-reframing-link {
+.cognitive-reframing-link,
+.anger-management {
     display: block;
     width: 200px;
     margin: 20px auto;
@@ -123,7 +124,8 @@ h1 {
 .emotions-link:hover,
 .bodyfeelings-link:hover,
 .thoughtreframe-link:hover,
-.cognitive-reframing-link:hover {
+.cognitive-reframing-link:hover 
+.anger-management:hover {
     background-color: #45a049;
 }
 
