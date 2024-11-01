@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anger Management Adventure</title>
+    <link rel="stylesheet" href="angermanagement.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen" class="screen">
+            <h1>Anger Management Adventure</h1>
+            <p>Join Alex on a journey through Emotown to learn about managing anger and emotions!</p>
+            <button id="start-button">Start Adventure</button>
+        </div>
+        <div id="game-screen" class="screen hidden">
+            <div id="scene-image"></div>
+            <div id="dialogue-box">
+                <p id="dialogue-text"></p>
+            </div>
+            <div id="choices"></div>
+        </div>
+        <div id="end-screen" class="screen hidden">
+            <h2>Congratulations!</h2>
+            <p>You've completed the Anger Management Adventure!</p>
+            <button id="certificate-button">Get Your Certificate</button>
+        </div>
+    </div>
+    <div id="certificate-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Your Certificate</h2>
+            <form id="certificate-form">
+                <label for="name">Enter your name:</label>
+                <input type="text" id="name" required>
+                <button type="submit">Generate Certificate</button>
+            </form>
+            <div id="certificate-display" class="hidden">
+                <p>Congratulations, <span id="certificate-name"></span>!</p>
+                <p>You have successfully completed the Anger Management Adventure.</p>
+                <button id="download-certificate">Download Certificate (PDF)</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="angermanagement.js"></script>
+</body>
+</html>
