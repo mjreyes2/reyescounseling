@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotions Table</title>
+    <link rel="stylesheet" href="emotionswheel.css">
+    <script src="emotionswheel.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button id="home-button">Home</button>
+            <button id="refresh-button">Refresh</button>
+        </div>
+        <div id="emotions-table-container">
+            <div id="center-circle">Emotions Table<br>I feel ...</div>
+            <div id="emotions-table"></div>
+        </div>
+        <div id="selected-emotions"></div>
+        <div id="intensity-selector" class="hidden"></div>
+        <button id="generate-button" class="hidden">Generate</button>
+        <textarea id="output-text" rows="5" class="hidden"></textarea>
+        <button id="copy-button" class="hidden">Copy</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Reframing</title>
+    <link rel="stylesheet" href="thoughtreframe.css">
+</head>
+<body>
+    <header>
+        <h1>Cognitive Reframing</h1>
+    </header>
+    <main>
+        <div class="situation-container">
+            <div id="situation" class="situation"></div>
+            <button id="generate-btn">Generate Situation</button>
+        </div>
+        <div class="thoughts-container">
+            <div class="thought-bubble">
+                <textarea id="thought1" placeholder="Enter your first thought..."></textarea>
+            </div>
+            <div class="thought-bubble">
+                <textarea id="thought2" placeholder="Enter your second thought..."></textarea>
+            </div>
+        </div>
+        <div class="emotions-container">
+            <div class="emotion-box">
+                <textarea id="emotion1" placeholder="Emotion for thought 1..."></textarea>
+                <input type="range" id="intensity1" min="0" max="10" value="5">
+                <span class="intensity-label">Intensity: <span id="intensity1-value">5</span></span>
+            </div>
+            <div class="emotion-box">
+                <textarea id="emotion2" placeholder="Emotion for thought 2..."></textarea>
+                <input type="range" id="intensity2" min="0" max="10" value="5">
+                <span class="intensity-label">Intensity: <span id="intensity2-value">5</span></span>
+            </div>
+        </div>
+        <div class="behaviors-container">
+            <div class="behavior-box">
+                <textarea id="behavior1" placeholder="Enter your likely behavior for thought 1..."></textarea>
+            </div>
+            <div class="behavior-box">
+                <textarea id="behavior2" placeholder="Enter your likely behavior for thought 2..."></textarea>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="home-btn">Home</button>
+            <button id="refresh-btn">Refresh</button>
+        </div>
+        <div class="notes-container">
+            <button id="generate-notes-btn">Generate Notes</button>
+            <div id="notes-field" class="hidden">
+                <textarea id="notes-text" readonly></textarea>
+                <button id="copy-notes-btn">Copy Notes</button>
+            </div>
+        </div>
+    </main>
+    <script src="thoughtreframe.js"></script>
+</body>
+</html>
